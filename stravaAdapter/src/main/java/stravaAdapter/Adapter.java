@@ -14,7 +14,7 @@ public class Adapter {
 
     public void getActivities(Integer before, Integer after, Integer page, Integer perPage) {
         final List<SummaryActivity> loggedInAthleteActivities = activitiesApi.getLoggedInAthleteActivities(before, after, page, perPage);
-        System.out.println("ВСЕГО АКТИВНОСТЕЙ"+ loggedInAthleteActivities.size());
+        System.out.println("All activities from ___ to ___"+ loggedInAthleteActivities.size());
     }
 }
 
