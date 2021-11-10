@@ -10,11 +10,12 @@ import java.util.List;
 @Component
 public class Adapter {
     @Autowired
-    private  ActivitiesApi activitiesApi;
+    private ActivitiesApi activitiesApi;
 
     public void getActivities(Integer before, Integer after, Integer page, Integer perPage) {
         final List<SummaryActivity> loggedInAthleteActivities = activitiesApi.getLoggedInAthleteActivities(before, after, page, perPage);
-        System.out.println("All activities from ___ to ___"+ loggedInAthleteActivities.size());
+        System.out.println("All activities from ___ to ___" + loggedInAthleteActivities.size());
+        loggedInAthleteActivities.forEach(a -> System.out.println(a.getName()));
     }
 }
 

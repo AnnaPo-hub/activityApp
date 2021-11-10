@@ -19,8 +19,10 @@ public class StravaIntegrationConfiguration {
         ApiClient apiClient = new ApiClient();
 
         OAuth strava_oauth = (OAuth) apiClient.getAuthentication("strava_oauth");
-        strava_oauth.setAccessToken("X");
-        return new ApiClient();
+        strava_oauth.setAccessToken("50c48de7cf58adb03f9a0d8e8a7e7f3a4163f879");
+        final String accessToken = strava_oauth.getAccessToken();
+        System.out.println(accessToken);
+        return apiClient;
     }
 
 }
