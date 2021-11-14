@@ -25,6 +25,11 @@ public class TripServiceImpl implements TripService {
         return tripDao.findAll();
     }
 
+    @Override
+    public Trip findTripById(Long id) {
+      return tripDao.getById(id);
+    }
+
     @Transactional
     @Override
     public void deleteById(Long id) {

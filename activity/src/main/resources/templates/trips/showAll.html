@@ -20,7 +20,7 @@
 <body>
 <h1>Trips:</h1>
 
-<table class="books">
+<table class="trips">
     <thead>
     <tr>
         <th>ID</th>
@@ -38,10 +38,13 @@
         <td th:text="${trip.location}">Location</td>
         <td th:text="${trip.start}">Location</td>
         <td th:text="${trip.finish}">Location</td>
+        <td th:text="${trip.finish}">Location</td>
 
     </tr>
     </tbody>
 </table>
+
+<a href="/books/newBook">Create new book</a>
 
 
 </body>

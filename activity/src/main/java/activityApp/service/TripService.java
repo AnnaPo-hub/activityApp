@@ -11,6 +11,8 @@ public interface TripService {
 
     List<Trip> getAll();
 
+    Trip findTripById(Long id);
+
     void deleteById(Long id);
 
   //  Trip edit  (Trip trip);
