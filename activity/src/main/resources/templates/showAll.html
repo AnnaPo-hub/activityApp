@@ -20,26 +20,29 @@
 <body>
 <h1>Trips:</h1>
 
-<table class="trips">
+<table class="books">
     <thead>
     <tr>
         <th>ID</th>
+        <th>Title</th>
         <th>Location</th>
         <th>Start</th>
         <th>Finish</th>
+
     </tr>
     </thead>
     <tbody>
     <tr th:each="trip : ${trips}">
-        <td th:text="${trip.id}">Id</td>
-        <td th:text="${trip.title}">Title</td>
+        <td th:text="${trip.id}">ID</td>
+        <td th:text="${trip.title}">Name/td>
         <td th:text="${trip.location}">Location</td>
-        <td th:text="${trip.start}">Start</td>
-        <td th:text="${trip.finish}">Finish</td>
+        <td th:text="${trip.start}">Location</td>
+        <td th:text="${trip.finish}">Location</td>
+
     </tr>
     </tbody>
 </table>
 
-<a href="/trips/newTrip">Plan new trip</a>
+
 </body>
 </html>

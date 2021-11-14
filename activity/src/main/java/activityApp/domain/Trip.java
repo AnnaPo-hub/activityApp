@@ -2,7 +2,7 @@ package activityApp.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -10,7 +10,7 @@ import java.util.List;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 @Entity
 @Table(name = "trip")
 public class Trip {
@@ -18,12 +18,8 @@ public class Trip {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //название , например, осенний отпуск в Венгии
+    //название , например, осенний отпуск в Венгрии
     private String title;
-
-    // несколько активностей в отпуске
-    @OneToMany(mappedBy = "trip", cascade = CascadeType.ALL)
-    private List<Activity> activities;
 
     //страна план
     @Column(name = "location")
@@ -34,6 +30,10 @@ public class Trip {
 
     @Column(name = "trip_finish")
     private LocalDate finish;
+
+    // несколько активностей в отпуске
+    @OneToMany(mappedBy = "trip", cascade = CascadeType.ALL)
+    private List<Activity> activities;
 
 //может это вообще не нужно?
     //    @Column(name = "sportsEquipment")

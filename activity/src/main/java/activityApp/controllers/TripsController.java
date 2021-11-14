@@ -1,7 +1,7 @@
 package activityApp.controllers;
 
 
-import activityApp.service.TripService;
+import activityApp.dao.TripDao;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,9 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @AllArgsConstructor
-@RequestMapping("/templates/trips")
-public class TripController {
-    private final TripService tripService;
+@RequestMapping("/trips")
+public class TripsController {
+    private final TripDao tripDao;
+
+    @GetMapping()
+    public String showAll(Model model) {
+        model.addAttribute("trips", tripDao.findAll());
+        return "trips/showAll";
+    }
 
 //    @GetMapping("/getById")
 //    public String getById(@RequestParam("id") Long id, Model model) {
@@ -38,11 +44,7 @@ public class TripController {
 //        return "books/getByAuthor";
 //    }
 
-    @GetMapping()
-    public String showAll(Model model) {
-        model.addAttribute("templates/trips", tripService.getAll());
-        return "templates/trips/showAll";
-    }
+
 
 //    @GetMapping("/newBook")
 //    public String newBook(Model model) {
