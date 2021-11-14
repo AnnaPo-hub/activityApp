@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @AllArgsConstructor
-@RequestMapping("/trips")
+@RequestMapping("/templates/trips")
 public class TripController {
     private final TripService tripService;
 
@@ -40,8 +40,8 @@ public class TripController {
 
     @GetMapping()
     public String showAll(Model model) {
-        model.addAttribute("trips", tripService.getAll());
-        return "trips/showAll";
+        model.addAttribute("templates/trips", tripService.getAll());
+        return "templates/trips/showAll";
     }
 
 //    @GetMapping("/newBook")

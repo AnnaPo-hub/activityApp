@@ -1,5 +1,5 @@
 insert into trip  (id, `title`, `location`, `trip_start`, `trip_finish`)
-values (1, 'Hungarial Autumn Holidays', 'Hungary', '2021-10-02 12:12:10', '2021-10-17 21:12:10');
+values (1, 'Hungarian Autumn Holidays', 'Hungary', '2021-10-02 12:12:10', '2021-10-17 21:12:10');
 insert into activity  (id, `type_of_activity`, `distance`, `trip_id`)  values (1, 'hike',  30,  1);
 insert into activity  (id, `type_of_activity`, `distance`, `trip_id`)  values (2, 'hike',  50,  1);
 
