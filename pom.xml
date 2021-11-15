@@ -24,6 +24,7 @@
   <packaging>pom</packaging>
   <modules>
     <module>activity</module>
+    <module>stravaAdapterTrue</module>
   </modules>
 
   <parent>
