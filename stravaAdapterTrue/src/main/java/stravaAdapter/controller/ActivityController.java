@@ -1,4 +1,4 @@
-package stravaAdapter;
+package stravaAdapter.controller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import ru.otus.activity.client.model.SummaryActivity;
+import stravaAdapter.model.Activity;
+import stravaAdapter.service.Adapter;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class ActivityController {
 
     @GetMapping("/getAllActivities")
     @ResponseBody
-    public List<SummaryActivity> getActivities(@RequestParam("before") Integer before, @RequestParam("after") Integer after) {
+    public List<Activity> getActivities(@RequestParam("before") Integer before, @RequestParam("after") Integer after) {
         return adapter.getActivities(before, after, 1, 30);
     }
 }

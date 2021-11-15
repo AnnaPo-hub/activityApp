@@ -7,16 +7,17 @@ import java.time.ZoneId;
 
 public class Utils {
 
-    public static void getAllActivityForGivenTrip(Trip trip) {
-        final long after = transferLocalDateToEpoch(trip.getStart());
-        final long before = transferLocalDateToEpoch(trip.getFinish());
-
-// вызвать адаптер страва
-    }
-
     public static long transferLocalDateToEpoch(LocalDate localdate) {
         ZoneId zoneId = ZoneId.systemDefault();
         return localdate.atStartOfDay(zoneId).toEpochSecond();
+    }
+
+    public static void getTripStartDate(Trip trip) {
+        final long after = transferLocalDateToEpoch(trip.getStart());
+    }
+
+    public static void getTripFinishDate(Trip trip) {
+        final long before = transferLocalDateToEpoch(trip.getFinish());
     }
 }
 
