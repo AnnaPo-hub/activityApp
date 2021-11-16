@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.otus.activity.client.api.ActivitiesApi;
 import ru.otus.activity.client.model.SummaryActivity;
-import stravaAdapter.model.Activity;
+import stravaAdapter.model.ActivityDto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,12 +14,12 @@ public class Adapter {
     @Autowired
     private ActivitiesApi activitiesApi;
 
-    public List<Activity> getActivities(Integer before, Integer after, Integer page, Integer perPage) {
+    public List<ActivityDto> getActivities(Integer before, Integer after, Integer page, Integer perPage) {
         final List<SummaryActivity> loggedInAthleteActivities = activitiesApi.getLoggedInAthleteActivities(before, after, page, perPage);
         System.out.println("All activities from ___ to ___" + loggedInAthleteActivities.size());
-        List<Activity> activities = new ArrayList<>();
+        List<ActivityDto> activities = new ArrayList<>();
         for (SummaryActivity activity : loggedInAthleteActivities) {
-            final Activity activitydto = Activity.builder()
+            final ActivityDto activitydto = ActivityDto.builder()
                     .id(activity.getId())
                     .name(activity.getName())
                     .distance(activity.getDistance())

@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Data
 @Builder
-public class Activity {
+public class ActivityDto {
     //все поля подтянуть из страва
     @Id
     private Long id;
