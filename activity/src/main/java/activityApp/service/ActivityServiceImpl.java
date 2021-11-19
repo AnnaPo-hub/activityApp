@@ -16,11 +16,11 @@ public class ActivityServiceImpl implements ActivityService {
 
     @Override
     //TODO исправить использование переменных urlPathVariables
-    public List<Activity> getActivitiesByTripId(Integer before, Integer after) {
+    public List<Activity> getActivitiesByTripId(long before, long after) {
         RestTemplate restTemplate = new RestTemplate();
         Map<String, Integer> urlPathVariables = new HashMap<>();
-        urlPathVariables.put("before", before);
-        urlPathVariables.put("after", after);
+        urlPathVariables.put("before", (int) before);
+        urlPathVariables.put("after", (int) after);
         List<Activity> activityList = new ArrayList<>();
 
         ResponseEntity<List<Activity>> responseEntity = restTemplate.exchange(

@@ -1,23 +1,24 @@
 package activityApp.utils;
 
 import activityApp.domain.Trip;
+import lombok.experimental.UtilityClass;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
-
+@UtilityClass
 public class Utils {
 
-    public static long transferLocalDateToEpoch(LocalDate localdate) {
+    public long transferLocalDateToEpoch(LocalDate localdate) {
         ZoneId zoneId = ZoneId.systemDefault();
         return localdate.atStartOfDay(zoneId).toEpochSecond();
     }
 
-    public static void getTripStartDate(Trip trip) {
-        final long after = transferLocalDateToEpoch(trip.getStart());
+    public long getTripStartDate(Trip trip) {
+        return transferLocalDateToEpoch(trip.getStart());
     }
 
-    public static void getTripFinishDate(Trip trip) {
-        final long before = transferLocalDateToEpoch(trip.getFinish());
+    public static long getTripFinishDate(Trip trip) {
+        return transferLocalDateToEpoch(trip.getFinish());
     }
 }
 
