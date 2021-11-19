@@ -1,16 +1,19 @@
 package activityApp.service;
 
 import activityApp.domain.Activity;
+import lombok.AllArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+@Component
+@AllArgsConstructor
 public class ActivityServiceImpl implements ActivityService {
 
 
@@ -24,7 +27,7 @@ public class ActivityServiceImpl implements ActivityService {
         List<Activity> activityList = new ArrayList<>();
 
         ResponseEntity<List<Activity>> responseEntity = restTemplate.exchange(
-                "http://localhost:8080/activities/getAllActivities?after=1635529296&before=1636130496",
+                "http://localhost:7001/activities/getAllActivities?after=1635529296&before=1636130496",
                 HttpMethod.GET, null,
                 new ParameterizedTypeReference<List<Activity>>() {
                 });

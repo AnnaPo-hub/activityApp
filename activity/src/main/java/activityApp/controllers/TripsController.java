@@ -2,7 +2,6 @@ package activityApp.controllers;
 
 
 import activityApp.dao.TripDao;
-import activityApp.domain.Activity;
 import activityApp.domain.Trip;
 import activityApp.service.ActivityService;
 import activityApp.service.TripService;
@@ -13,10 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.List;
-import java.util.Map;
 
 @Controller
 @AllArgsConstructor
@@ -34,17 +29,18 @@ public class TripsController {
     }
 
     @GetMapping("/getStatistics")
-    @ResponseBody
-    public Map<String, Integer> getById(@RequestParam("id") Long id, Model model) {
+    //@ResponseBody
+    public String getById(@RequestParam("id") Long id, Model model) {
         final Trip trip = tripService.getTripById(id);
         final long tripStartDate = Utils.getTripStartDate(trip);
         final long tripFinishDate = Utils.getTripFinishDate(trip);
-        final List<Activity> activitiesByTripId = activityService.getActivitiesByTripId(tripFinishDate, tripStartDate);
-        model.addAttribute("activityByTripId", tripService.getTripStatistics(activitiesByTripId));
-        final Map<String, Integer> tripStatistics = tripService.getTripStatistics(activitiesByTripId);
-        return tripStatistics;
+       // final List<Activity> activitiesByTripId = activityService.getActivitiesByTripId(tripFinishDate, tripStartDate);
+        model.addAttribute("activityList", activityService.getActivitiesByTripId(tripFinishDate, tripStartDate));
+       // model.addAttribute("activityByTripId", tripService.getTripStatistics(activitiesByTripId));
+//        final Map<String, Integer> tripStatistics = tripService.getTripStatistics(activitiesByTripId);
+//        return tripStatistics;
 
-        //return "trips/getStatByTrip";
+        return "trips/getStatByTrip";
     }
 //
 //    @GetMapping("/getByName")

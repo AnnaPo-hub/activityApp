@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>List of all books according to the indicated author's name</title>
+    <title>List of all activities during this vacation</title>
     <style type="text/css">
         body {
             padding: 50px;
@@ -13,27 +13,24 @@
             padding: 5px;
         }
 
-
-
     </style>
 </head>
 <body>
-<h1>Books:</h1>
+<h1>Страдания:</h1>
 
-<table class="trips">
+<table class="activities">
     <thead>
     <tr>
-        <th></th>
         <th>Name</th>
-
+        <th>Distance</th>
+        <th>Type of Activity</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="activity : ${activityByTripId}">
-        <td th:text="${activity.id}">1</td>
-        <td th:text="${book.name}">John Doe</td>
-        <td th:text="${book.author.name}">John Doe</td>
-        <td th:text="${book.genre.name}">John Doe</td>
+    <tr th:each="activity : ${activityList}">
+        <td th:text="${activity.name}">Name</td>
+        <td th:text="${activity.distance}">Distance</td>
+        <td th:text="${activity.typeOfActivity}">Type of activity</td>
     </tr>
     </tbody>
 </table>
