@@ -13,8 +13,9 @@ primary key (id)
 
 create table activity(
 id bigserial,
-type_of_activity varchar(255),
+name varchar(255),
 distance bigint(30),
+type_of_activity varchar(255),
 trip_id bigint references trip(id)
 );
 

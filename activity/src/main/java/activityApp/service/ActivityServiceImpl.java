@@ -1,5 +1,6 @@
 package activityApp.service;
 
+import activityApp.dao.ActivityDao;
 import activityApp.domain.Activity;
 import lombok.AllArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
@@ -16,6 +17,8 @@ import java.util.Map;
 @AllArgsConstructor
 public class ActivityServiceImpl implements ActivityService {
 
+ private final ActivityDao  activityDao;
+    //дергает страву и  сохраняет лист активносте в БД
 
     @Override
     //TODO исправить использование переменных urlPathVariables
@@ -33,6 +36,11 @@ public class ActivityServiceImpl implements ActivityService {
                 });
         if (responseEntity.hasBody()) {
             activityList = responseEntity.getBody();
+        }
+        if (activityList!=null){
+            for (Activity act:  activityList) {
+                activityDao.save(act);
+            }
         }
         return activityList;
     }
