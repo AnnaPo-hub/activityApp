@@ -1,11 +1,9 @@
 package activityApp.service;
 
-import activityApp.domain.Activity;
 import activityApp.domain.Trip;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 
 @Service
 public interface TripService {
@@ -17,9 +15,6 @@ public interface TripService {
 
     void deleteById(Long id);
 
-  //  Trip edit  (Trip trip);
+    //  Trip edit  (Trip trip);
 
-    Map<String, Integer> getTripStatistics(List<Activity> activities);
-
-    //getEquipment нужный для этого вида активности
 }

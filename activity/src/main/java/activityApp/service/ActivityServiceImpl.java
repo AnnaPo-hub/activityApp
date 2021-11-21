@@ -13,11 +13,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 @Component
 @AllArgsConstructor
 public class ActivityServiceImpl implements ActivityService {
 
- private final ActivityDao  activityDao;
+    private final ActivityDao activityDao;
     //дергает страву и  сохраняет лист активносте в БД
 
     @Override
@@ -37,8 +38,8 @@ public class ActivityServiceImpl implements ActivityService {
         if (responseEntity.hasBody()) {
             activityList = responseEntity.getBody();
         }
-        if (activityList!=null){
-            for (Activity act:  activityList) {
+        if (activityList != null) {
+            for (Activity act : activityList) {
                 activityDao.save(act);
             }
         }

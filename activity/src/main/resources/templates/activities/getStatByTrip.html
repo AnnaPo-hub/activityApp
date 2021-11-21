@@ -13,23 +13,23 @@
             padding: 5px;
         }
 
+
     </style>
 </head>
 <body>
-<h1>Страдания:</h1>
+<h1>Активности из выбранного путешествия:</h1>
 
 <table class="activities">
     <thead>
     <tr>
-        <th>Type of Activity</th>
-        <th>Distance</th>
+        <th>Тип активности</th>
+        <th>Дистанция</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="activity : ${activityList}">
         <td th:text="${activity.typeOfActivity}">Type of activity</td>
         <td th:text="${activity.totalDistance}">Distance</td>
-
     </tr>
     </tbody>
 </table>

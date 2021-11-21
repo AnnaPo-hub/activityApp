@@ -19,8 +19,6 @@ public class ActivityController {
     @GetMapping()
     public String getStatsByTrip(@RequestParam(value = "tripId") long tripId, Model model) {
         model.addAttribute("activityList", activityDao.countDistanceByTypeOfActivity(tripId));
-      //  final List<Activity> activitiesByTripId = activityDao.countDistanceByTypeOfActivity(tripId);
-       // System.out.println(" РАСПЕЧАТАН "+ activitiesByTripId.size());
         return "activities/getStatByTrip";
     }
 

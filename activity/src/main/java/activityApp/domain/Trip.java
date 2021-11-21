@@ -18,10 +18,9 @@ public class Trip {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //название , например, осенний отпуск в Венгрии
+    @Column(name = "name")
     private String title;
 
-    //страна план
     @Column(name = "location")
     private String location;
 
@@ -31,14 +30,7 @@ public class Trip {
     @Column(name = "trip_finish")
     private LocalDate finish;
 
-    // несколько активностей в отпуске
     @OneToMany(mappedBy = "trip", cascade = CascadeType.ALL)
     private List<Activity> activities;
 
-//может это вообще не нужно?
-    //    @Column(name = "sportsEquipment")
-//    SportsEquipment sportsEquipment;
-//
-//    @Column(name = "otherEquipment")
-//    OtherEquipment otherEquipment;
 }
