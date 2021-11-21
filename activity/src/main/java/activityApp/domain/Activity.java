@@ -22,7 +22,7 @@ public class Activity {
     @Column(name = "distance")
     private int distance;
 
-    @Column(name = "type_of_activity")
+    @Column(name = "TYPEOFACTIVITY")
     String typeOfActivity;
 
 
@@ -30,6 +30,6 @@ public class Activity {
 //добавить сохранение вытащенных активностей в БД ?
 
     @ManyToOne(targetEntity = Trip.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "trip_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_trip_id"), nullable = false)
+    @JoinColumn(name = "tripId", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_tripId"), nullable = false)
     private Trip trip;
 }

@@ -21,16 +21,15 @@
 <table class="activities">
     <thead>
     <tr>
-        <th>Name</th>
-        <th>Distance</th>
         <th>Type of Activity</th>
+        <th>Distance</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="activity : ${activityList}">
-        <td th:text="${activity.name}">Name</td>
-        <td th:text="${activity.distance}">Distance</td>
         <td th:text="${activity.typeOfActivity}">Type of activity</td>
+        <td th:text="${activity.totalDistance}">Distance</td>
+
     </tr>
     </tbody>
 </table>

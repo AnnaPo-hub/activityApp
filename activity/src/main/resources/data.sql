@@ -1,9 +1,9 @@
 insert into trip  (id, `title`, `location`, `trip_start`, `trip_finish`)
 values (1, 'Hungarian Autumn Holidays', 'Hungary', '2021-10-02 12:12:10', '2021-10-17 21:12:10');
-insert into activity  (id, `name`, `distance`, `type_of_activity`, `trip_id`)  values (1, 'happyHike',  30,'hike',    1);
-insert into activity  (id, `name`, `distance`, `type_of_activity`, `trip_id`)  values (2, 'happyHike2', 30, 'hike',    1);
-insert into activity  (id, `name`, `distance`, `type_of_activity`, `trip_id`)  values (3, 'happyrun2', 5, 'run',   1);
-insert into activity  (id, `name`, `distance`, `type_of_activity`, `trip_id`)  values (4, 'happyrun2',  5, 'run',  1);
+insert into activity  (id, `name`, `distance`, `typeOfActivity`, `tripId`)  values (1, 'happyHike',  30,'hike',    1);
+insert into activity  (id, `name`, `distance`, `typeOfActivity`, `tripId`)  values (2, 'happyHike2', 30, 'hike',    1);
+insert into activity  (id, `name`, `distance`, `typeOfActivity`, `tripId`)  values (3, 'happyrun2', 5, 'run',   1);
+insert into activity  (id, `name`, `distance`, `typeOfActivity`, `tripId`)  values (4, 'happyrun2',  5, 'run',  1);
 
 insert into acl_sid (id, principal, sid) values
 (1, 1, 'owner'),
