@@ -2,38 +2,25 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Show statistics</title>
+    <title>New trip</title>
 </head>
 <body>
 
 <form th:action="@{/trips}" th:method="POST" th:object="${trip}">
-    <label for="name">Enter book id : </label>
-    <input id="name" th:field="*{id}" type="text"/>
+    <label for="title">Enter trip name: </label>
+    <input id="title" th:field="*{title}" type="text"/>
 
+    <label for="location">Enter trip location: </label>
+    <input id="location" th:field="*{location}" type="text"/>
 
-    <div>
-        <label for="author">Select author:</label>
-        <select id="author" th:field="*{author}">
-            <option value="0">Select author</option>
-            <option th:each="author :${authors}"
-                    th:text="${author.name}"
-                    th:value="${author.id}"></option>
-        </select>
-    </div>
+    <label for="start">Enter start data: </label>
+    <input id="start" th:field="*{start}" type="text"/>
 
-
-    <div>
-        <label>Select genre:</label>
-        <select th:field="*{genre}">
-            <option value="0">Select genre</option>
-            <option th:each="genre :${genres}"
-                    th:text="${genre.name}"
-                    th:value="${genre.id}"></option>
-        </select>
-    </div>
+    <label for="finish">Enter finish data: </label>
+    <input id="finish" th:field="*{finish}" type="text"/>
 
     <br/>
-    <input type="submit" value="Create book"/>
+    <input type="submit" value="Create trip"/>
 </form>
 
 </body>

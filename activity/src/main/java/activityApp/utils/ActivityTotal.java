@@ -1,4 +1,4 @@
-package activityApp.dao;
+package activityApp.utils;
 
 public interface ActivityTotal {
     String getTypeOfActivity();

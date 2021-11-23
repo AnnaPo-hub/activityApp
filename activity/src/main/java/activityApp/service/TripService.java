@@ -15,6 +15,4 @@ public interface TripService {
 
     void deleteById(Long id);
 
-    //  Trip edit  (Trip trip);
-
 }

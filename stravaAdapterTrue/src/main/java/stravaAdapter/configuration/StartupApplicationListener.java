@@ -14,6 +14,6 @@ public class StartupApplicationListener implements ApplicationListener<ContextRe
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-        adapter.getActivities(1636130496, 1635529296, 1,  30);
+        adapter.getActivities(1636130496, 1635529296, 1, 30);
     }
 }

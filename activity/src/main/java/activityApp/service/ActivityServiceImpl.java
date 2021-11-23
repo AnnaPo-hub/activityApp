@@ -31,7 +31,7 @@ public class ActivityServiceImpl implements ActivityService {
         List<Activity> activityList = new ArrayList<>();
 
         ResponseEntity<List<Activity>> responseEntity = restTemplate.exchange(
-                "http://localhost:7001/activities/getAllActivities?after=1635529296&before=1636130496",
+                "http://localhost:7001/activities/getAllActivities?after=/{after}}/&before=/{before}}",
                 HttpMethod.GET, null,
                 new ParameterizedTypeReference<List<Activity>>() {
                 });
