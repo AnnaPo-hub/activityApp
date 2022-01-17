@@ -15,8 +15,8 @@ create table activity(
 id bigserial,
 name varchar(255),
 distance bigint(30),
-typeOfActivity varchar(255),
-tripId bigint references trip(id)
+type varchar(255),
+trip_id bigint references trip(id)
 );
 
 

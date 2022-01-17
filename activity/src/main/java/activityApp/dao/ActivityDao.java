@@ -10,9 +10,9 @@ import java.util.List;
 
 @Component
 public interface ActivityDao extends JpaRepository<Activity, Long> {
-    @Query(value = "Select typeOfActivity as typeOfActivity, sum(distance ) as  totalDistance " +
+    @Query(value = "Select type as type, sum(distance ) as  totalDistance " +
             "From  Activity " +
             "Where tripId = 1 " +
-            "Group by typeOfActivity")
-    List<ActivityTotal> countDistanceByTypeOfActivity(long trip_id);
+            "Group by type")
+    List<ActivityTotal> countDistanceByType(long trip_id);
 }

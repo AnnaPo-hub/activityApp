@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>List of all activities during this vacation</title>
+    <title>List of all trips</title>
     <style type="text/css">
         body {
             padding: 50px;
@@ -15,24 +15,32 @@
 
 
 
+
     </style>
 </head>
 <body>
-<h1>Активности из выбранного путешествия:</h1>
+<h1>Trips:</h1>
 
-<table class="activities">
+<table class="trips">
     <thead>
     <tr>
-        <th>Тип активности</th>
-        <th>Дистанция</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Distance</th>
+        <th>Type of Activity</th>
+
     </tr>
     </thead>
     <tbody>
-    <tr th:each="activity : ${activityList}">
-        <td th:text="${activity.type}">Type of activity</td>
-        <td th:text="${activity.totalDistance}">Distance</td>
+    <tr th:each="act : ${activityList}">
+        <td th:text="${act.id}">ID</td>
+        <td th:text="${act.name}">Name/td>
+        <td th:text="${trip.distance}">Location</td>
+        <td th:text="${trip.type}">Start</td>
+
     </tr>
     </tbody>
 </table>
+
 </body>
 </html>

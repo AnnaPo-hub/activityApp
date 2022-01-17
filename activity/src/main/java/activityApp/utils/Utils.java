@@ -19,6 +19,7 @@ public class Utils {
     }
 
     public static long getTripFinishDate(Trip trip) {
+
         return transferLocalDateToEpoch(trip.getFinish());
     }
 }

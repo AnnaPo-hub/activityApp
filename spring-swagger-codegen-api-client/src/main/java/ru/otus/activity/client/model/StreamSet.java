@@ -15,7 +15,6 @@ package ru.otus.activity.client.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import ru.otus.activity.client.model.*;
 
 import java.util.Objects;
 

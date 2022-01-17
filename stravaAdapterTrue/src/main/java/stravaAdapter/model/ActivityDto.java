@@ -21,7 +21,7 @@ public class ActivityDto {
     @Column(name = "distance")
     private float distance;
 
-    @Column(name = "typeOfActivity")
-    private String typeOfActivity;
+    @Column(name = "type")
+    private String type;
 
 }

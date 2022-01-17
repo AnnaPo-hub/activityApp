@@ -14,13 +14,13 @@ import javax.persistence.*;
 public class Activity {
     @Id
     Long id;
-    @Column(name = "TYPEOFACTIVITY")
-    String typeOfActivity;
+    @Column(name = "type")
+    String type;
     @Column(name = "name")
     private String name;
     @Column(name = "distance")
     private int distance;
     @ManyToOne(targetEntity = Trip.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "tripId", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_tripId"), nullable = false)
+    @JoinColumn(name = "trip_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_tripId"), nullable = true)
     private Trip trip;
 }

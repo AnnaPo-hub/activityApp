@@ -1,16 +1,13 @@
-insert into trip  (id, `title`, `location`, `trip_start`, `trip_finish`)
-values (1, 'Hungarian Autumn Holidays', 'Hungary', '2021-10-02 12:12:10', '2021-10-17 21:12:10');
-insert into activity  (id, `name`, `distance`, `typeOfActivity`, `tripId`)  values (1, 'happyHike',  30,'hike',    1);
-insert into activity  (id, `name`, `distance`, `typeOfActivity`, `tripId`)  values (2, 'happyHike2', 30, 'hike',    1);
-insert into activity  (id, `name`, `distance`, `typeOfActivity`, `tripId`)  values (3, 'happyrun2', 5, 'run',   1);
-insert into activity  (id, `name`, `distance`, `typeOfActivity`, `tripId`)  values (4, 'happyrun2',  5, 'run',  1);
+insert into trip(id,title,location,trip_start,trip_finish) values
+  (1,'Hungarian honeymoon','Hungary','2021-10-02','2021-10-17');
+
 
 insert into acl_sid (id, principal, sid) values
-(1, 1, 'owner'),
-(2, 1, 'guest');
+(1, 1, 'admin'),
+(2, 1, 'user');
 
 insert into acl_class (id, class) values
-(1, 'spb.family.FamilyActivityApp.domain.Trip');
+(1, 'ru.otus.SpringMvcHomework.domain.Book');
 
 insert into acl_object_identity (id, object_id_class, object_id_identity, parent_object, owner_sid, entries_inheriting) values
 (1, 1, 1, null, 1, 0),

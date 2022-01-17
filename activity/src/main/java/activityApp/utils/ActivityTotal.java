@@ -1,7 +1,7 @@
 package activityApp.utils;
 
 public interface ActivityTotal {
-    String getTypeOfActivity();
+    String getType();
 
     int getTotalDistance();
 }

@@ -4,7 +4,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.*;
 import org.springframework.http.RequestEntity.BodyBuilder;
 import org.springframework.http.client.BufferingClientHttpRequestFactory;
 import org.springframework.http.client.ClientHttpRequestExecution;
@@ -22,11 +21,9 @@ import ru.otus.activity.client.invoker.auth.Authentication;
 import ru.otus.activity.client.invoker.auth.HttpBasicAuth;
 import ru.otus.activity.client.invoker.auth.OAuth;
 
-import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
 import java.text.ParseException;
-import java.util.*;
 import java.util.Map.Entry;
 
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-31T23:26:10.837+03:00")

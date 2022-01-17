@@ -7,6 +7,6 @@ import java.util.List;
 
 @Service
 public interface ActivityService {
-    //дергает страву и  сохраняет лист активносте в БД
-    List<Activity> getActivitiesByTripId(long before, long after);
+    //дергает страву и  сохраняет лист активностей в БД
+   List<Activity> getActivitiesByPeriod(long before, long after);
 }

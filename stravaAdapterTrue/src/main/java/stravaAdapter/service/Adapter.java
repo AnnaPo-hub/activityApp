@@ -23,7 +23,7 @@ public class Adapter {
                     .id(activity.getId())
                     .name(activity.getName())
                     .distance(activity.getDistance())
-                    .typeOfActivity(activity.getType().toString())
+                    .type(activity.getType().toString())
                     .build();
             activities.add(activitydto);
         }
