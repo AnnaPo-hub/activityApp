@@ -13,7 +13,7 @@ public class App {
 
     public static void main(String[] args) throws SQLException {
         ConfigurableApplicationContext ctx =  SpringApplication.run(App.class);
-        ctx.getBean(ActivityService.class).getActivitiesByPeriod(1636130496,1635529296);
+        ctx.getBean(ActivityService.class).getActivitiesByPeriod(1636130496,1635529296, 1);
 
          Console.main(args);
     }

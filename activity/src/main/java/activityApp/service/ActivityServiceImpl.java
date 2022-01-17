@@ -19,7 +19,7 @@ public class ActivityServiceImpl implements ActivityService {
     //дергает страву и  сохраняет лист активностей в БД
 
     @Override
-    public List<Activity> getActivitiesByPeriod(@RequestParam long before, @RequestParam long after) {
+    public List<Activity> getActivitiesByPeriod(@RequestParam long before, @RequestParam long after, long tripId) {
         RestTemplate restTemplate = new RestTemplate();
         Map<String, Long> urlPathVariables = new HashMap<>();
         urlPathVariables.put("after", after);
@@ -35,8 +35,8 @@ public class ActivityServiceImpl implements ActivityService {
         }
         if (activityList != null) {
             for (Activity act : activityList) {
-                final Activity saved = activityDao.save(act);
-                saved.setTrip(tripService.getTripById(tripId));
+                act.setTrip(tripService.getTripById(tripId));
+                activityDao.save(act);
             }
         }
         return activityList;

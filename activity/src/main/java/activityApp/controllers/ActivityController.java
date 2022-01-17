@@ -33,7 +33,7 @@ public class ActivityController {
         final Trip tripById = tripService.getTripById(tripId);
         final long tripStartDate = Utils.getTripStartDate(tripById);
         final long tripFinishDate = Utils.getTripFinishDate(tripById);
-        model.addAttribute("activityList", activityService.getActivitiesByPeriod(tripFinishDate,tripStartDate,tripId));
+        model.addAttribute("activityList", activityService.getActivitiesByPeriod(tripFinishDate,tripStartDate, tripId));
         return "activities/showAll";
     }
 

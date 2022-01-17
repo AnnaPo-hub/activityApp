@@ -21,6 +21,6 @@ public class Activity {
     @Column(name = "distance")
     private int distance;
     @ManyToOne(targetEntity = Trip.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "trip_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_tripId"), nullable = true)
+    @JoinColumn(name = "trip_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_tripId"))
     private Trip trip;
 }
