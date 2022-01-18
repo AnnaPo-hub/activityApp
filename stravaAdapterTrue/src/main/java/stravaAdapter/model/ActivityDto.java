@@ -11,7 +11,6 @@ import javax.persistence.Id;
 @Data
 @Builder
 public class ActivityDto {
-    //все поля подтянуть из страва
     @Id
     private Long id;
 
