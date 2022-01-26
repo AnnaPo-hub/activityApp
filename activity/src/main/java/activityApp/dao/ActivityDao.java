@@ -13,7 +13,7 @@ import java.util.List;
 public interface ActivityDao extends JpaRepository<Activity, Long> {
     @Query(value = "Select type as type, sum(distance ) as  totalDistance " +
             "From  Activity " +
-            "Where trip_id = :trip_id" +
+            "Where trip_id = :trip_id " +
             "Group by type")
     List<ActivityTotal> countDistanceByType(@Param("trip_id") long trip_id);
 }
