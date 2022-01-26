@@ -13,7 +13,6 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.util.UriComponentsBuilder;
 import ru.otus.activity.client.invoker.ApiClient;
-import ru.otus.activity.client.model.*;
 
 import java.time.LocalDate;
 import java.util.HashMap;

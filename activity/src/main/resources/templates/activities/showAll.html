@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List of all trips</title>
+    <style type="text/css">
+        body {
+            padding: 50px;
+        }
+
+        .persons, .persons td {
+            border: 1px solid lightgray;
+            padding: 5px;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<h1>Trips:</h1>
+
+<table class="trips">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Distance</th>
+        <th>Type of Activity</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="act : ${activityList}">
+        <td th:text="${act.id}">ID</td>
+        <td th:text="${act.name}">Name/td>
+        <td th:text="${act.distance}">Location</td>
+        <td th:text="${act.type}">Start</td>
+
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
