@@ -27,7 +27,7 @@ public class TripServiceImpl implements TripService {
 
     @Override
     public Trip getTripById(Long id) {
-        return tripDao.getById(id);
+        return tripDao.getOne(id);
     }
 
     @Transactional

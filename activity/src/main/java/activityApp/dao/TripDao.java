@@ -7,5 +7,4 @@ import activityApp.domain.Trip;
 
 @Component
 public interface TripDao extends JpaRepository<Trip, Long> {
-
 }
