@@ -1,6 +1,5 @@
 drop table IF EXISTS TRIP cascade ;
-drop table IF EXISTS GENRE cascade ;
-drop table IF EXISTS BOOK cascade ;
+drop table IF EXISTS ACTIVITY cascade ;
 
 create table trip(
 id bigserial,
