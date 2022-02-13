@@ -21,13 +21,13 @@ public class ActivityController {
     private final ActivityDao activityDao;
     private final ActivityService activityService;
     private final TripService tripService;
-//разложить полученные активности по типам
+
     @GetMapping()
     public String getStatsByTrip(@RequestParam(value = "tripId") long tripId, Model model) {
         model.addAttribute("activityList", activityDao.countDistanceByType(tripId));
         return "activities/getStatByTrip";
     }
-//получить активности по заданному tripId
+
     @GetMapping("/getAllActivities")
     public String getTripActivityInfo(@RequestParam(value = "tripId") long tripId, Model model) {
         final Trip tripById = tripService.getTripById(tripId);
@@ -36,8 +36,5 @@ public class ActivityController {
         model.addAttribute("activityList", activityService.getActivitiesByPeriod(tripFinishDate,tripStartDate, tripId));
         return "activities/showAll";
     }
-
-
-
 }
 

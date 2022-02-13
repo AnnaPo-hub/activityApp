@@ -105,7 +105,6 @@
             <version>2.6.11</version>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -114,5 +113,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

@@ -18,7 +18,7 @@
     </style>
 </head>
 <body>
-<h1>Активности из выбранного путешествия:</h1>
+<h1>Activities during the given trip per type</h1>
 
 <table class="activities">
     <thead>
@@ -30,7 +30,7 @@
     <tbody>
     <tr th:each="activity : ${activityList}">
         <td th:text="${activity.type}">Type of activity</td>
-        <td th:text="${activity.totalDistance}">Distance</td>
+        <td th:text="${activity.totalDistance/1000}">Distance</td>
     </tr>
     </tbody>
 </table>

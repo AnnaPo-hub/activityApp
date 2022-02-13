@@ -32,5 +32,4 @@ public class Trip {
 
     @OneToMany(mappedBy = "trip", cascade = CascadeType.ALL)
     private List<Activity> activities;
-
 }

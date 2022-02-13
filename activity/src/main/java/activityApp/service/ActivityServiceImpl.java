@@ -16,7 +16,6 @@ public class ActivityServiceImpl implements ActivityService {
 
     private final ActivityDao activityDao;
     private final TripService tripService;
-    //дергает страву и  сохраняет лист активностей в БД
 
     @Override
     public List<Activity> getActivitiesByPeriod(@RequestParam long before, @RequestParam long after, long tripId) {
