@@ -52,54 +52,14 @@ public class SummaryAthlete {
 
     @JsonProperty("country")
     private String country = null;
-
-    /**
-     * The athlete&#39;s sex.
-     */
-    public enum SexEnum {
-        M("M"),
-
-        F("F");
-
-        private String value;
-
-        SexEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static SexEnum fromValue(String text) {
-            for (SexEnum b : SexEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
-    }
-
     @JsonProperty("sex")
     private SexEnum sex = null;
-
     @JsonProperty("premium")
     private Boolean premium = null;
-
     @JsonProperty("summit")
     private Boolean summit = null;
-
     @JsonProperty("created_at")
     private DateTime createdAt = null;
-
     @JsonProperty("updated_at")
     private DateTime updatedAt = null;
 
@@ -369,7 +329,6 @@ public class SummaryAthlete {
         this.updatedAt = updatedAt;
     }
 
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -399,7 +358,6 @@ public class SummaryAthlete {
     public int hashCode() {
         return Objects.hash(id, resourceState, firstname, lastname, profileMedium, profile, city, state, country, sex, premium, summit, createdAt, updatedAt);
     }
-
 
     @Override
     public String toString() {
@@ -433,6 +391,41 @@ public class SummaryAthlete {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
+    }
+
+    /**
+     * The athlete&#39;s sex.
+     */
+    public enum SexEnum {
+        M("M"),
+
+        F("F");
+
+        private String value;
+
+        SexEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonCreator
+        public static SexEnum fromValue(String text) {
+            for (SexEnum b : SexEnum.values()) {
+                if (String.valueOf(b.value).equals(text)) {
+                    return b;
+                }
+            }
+            return null;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
     }
 
 }

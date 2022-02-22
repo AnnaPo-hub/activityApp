@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New trip</title>
+</head>
+<body>
+
+<form th:action="@{/trips}" th:method="POST" th:object="${trip}">
+    <label for="title">Enter trip name: </label>
+    <input id="title" th:field="*{title}" type="text"/>
+
+    <label for="location">Enter trip location: </label>
+    <input id="location" th:field="*{location}" type="text"/>
+
+    <label for="start">Enter start data: </label>
+    <input id="start" th:field="*{start}" type="text"/>
+
+    <label for="finish">Enter finish data: </label>
+    <input id="finish" th:field="*{finish}" type="text"/>
+
+    <br/>
+    <input type="submit" value="Create trip"/>
+</form>
+
+</body>
+</html>
